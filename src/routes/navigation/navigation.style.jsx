@@ -14,19 +14,29 @@ export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
+  &:hover {
+    transform: scale(1.5);
+  }
 `;
 
 export const NavLinks = styled.div`
-  width: 50%;
+  width: 70%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 5px 5px;
 `;
 
 export const Navlink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+  border: 2px solid purple;
+  border-radius: 3px;
+  background-color: papayawhip;
+  &:hover {
+    background-color: purple;
+  }
 `;
 
 //     height: 70px;

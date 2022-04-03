@@ -3,9 +3,16 @@
     flex-direction: column;
     margin-bottom: 30px;
     .title {
-        font-size: 28px;
+        font-size: 15px;
+        font-style: sans-serif;
         margin-bottom: 25px;
         cursor: pointer;
+        border: 2px solid purple;
+        border-radius: 3px;
+        background-color: yellow;
+        &:hover {
+            background-color: purple;
+        }
     }
     .preview {
         display: grid;
