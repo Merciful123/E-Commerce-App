@@ -36,6 +36,7 @@ export const Navlink = styled(Link)`
   background-color: papayawhip;
   &:hover {
     background-color: purple;
+    box-shadow: 1px 1px 10px yellow;
   }
 `;
 
