@@ -14,6 +14,7 @@ export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
+  padding: 10px;
   &:hover {
     transform: scale(1.5);
   }
@@ -35,7 +36,7 @@ export const Navlink = styled(Link)`
   border-radius: 3px;
   background-color: papayawhip;
   &:hover {
-    background-color: purple;
+    background-color: Turquoise;
     box-shadow: 1px 1px 10px yellow;
   }
 `;

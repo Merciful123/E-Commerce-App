@@ -7,11 +7,11 @@
         font-style: sans-serif;
         margin-bottom: 25px;
         cursor: pointer;
-        border: 2px solid purple;
+        border: 2px solid rgb(108, 54, 145);
         border-radius: 3px;
         background-color: yellow;
         &:hover {
-            background-color: purple;
+            background-color: rgb(54, 233, 212);
         }
     }
     .preview {
