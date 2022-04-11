@@ -1,12 +1,12 @@
-import {
-  signInWithGooglePopup,
-  createUserDocumentFromAuth,
-  signInAuthUserWithEmailAndPassword,
-} from "../../utils/firebase/firebase.utils";
 import { useState } from "react";
 import FormInput from "../form-input/form-input.component";
 import "./sign-in-form.style.scss";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { useDispatch } from "react-redux";
+import {
+  emailSignInStart,
+  googleSignInStart,
+} from "../../store/user/user.action";
 
 const defaultFormFields = {
   Email: "",
@@ -14,6 +14,7 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+  const dispatch = useDispatch();
   const [FormFields, setFormFields] = useState(defaultFormFields);
   const { Email, Password } = FormFields;
 
@@ -21,14 +22,14 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
   const SignInWithGoogle = async () => {
-    await signInWithGooglePopup();
+    dispatch(googleSignInStart());
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await signInAuthUserWithEmailAndPassword(Email, Password);
+      dispatch(emailSignInStart(Email, Password));
 
       resetFormFields();
     } catch (error) {
@@ -51,8 +52,8 @@ const SignInForm = () => {
   };
   return (
     <div className="sign-up-container">
-      <h2>Already have an acoount?</h2>
-      <span>Sign In With Email, Password Or With Google Account</span>
+      <h2>Already have an acoount.</h2>
+      <span>Sign In With Email or Google Account</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Email"
