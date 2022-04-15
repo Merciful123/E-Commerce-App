@@ -12,6 +12,9 @@ export const PaymentFormContainer = styled.div`
 export const FormContainer = styled.form`
   height: 100px;
   min-width: 500px;
+  background-color: papayawhip;
+  border: 1px solid black;
+  border-radius: 3px;
 `;
 
 export const PaymentButton = styled(Button)`

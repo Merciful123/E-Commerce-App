@@ -33,9 +33,13 @@ const PaymentForm = () => {
     const response = await fetch("/.netlify/functions/create-payment-intent", {
       method: "post",
 
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({ amount: amount * 100 }),
-    }).then((res) => res.json());
+    }).then((res) => {
+      return res.json();
+    });
 
     const {
       paymentIntent: { client_secret },
@@ -51,7 +55,7 @@ const PaymentForm = () => {
     });
     setIsProcessingPayment(false);
     if (paymentResult.error) {
-      alert(paymentResult.error);
+      alert(paymentResult.error.message);
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
         alert("Payment Successful");
@@ -65,8 +69,8 @@ const PaymentForm = () => {
         <h3>Credit Card Payment</h3>
         <CardElement />
         <PaymentButton
+          buttonType={BUTTON_TYPE_CLASSES.base}
           isLoading={isProcessingPayment}
-          buttonType={BUTTON_TYPE_CLASSES.inverted}
         >
           PAY NOW
         </PaymentButton>
