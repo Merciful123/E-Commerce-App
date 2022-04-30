@@ -24,7 +24,6 @@ export const PaymentButton = styled(Button)`
   margin-left: auto;
   margin-top: 30px;
   @media screen and (max-width: 800px) {
-    display: flex;
     justify-content: center;
   }
 `;
