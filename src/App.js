@@ -10,6 +10,7 @@ import Spinner from "./components/spinner/spinner.component";
 // import Shop from "./routes/shop/shop.component";
 // import Checkout from "./routes/checkout/checkout.component";
 import { checkUserSession } from "./store/user/user.action";
+import { GlobalStyle } from "./global.style";
 
 //Below is Codesplitting,lazy and Suspence Optimization:--
 // Dynamic Import
@@ -32,6 +33,7 @@ const App = () => {
 
   return (
     <Suspense fallback={<Spinner />}>
+      <GlobalStyle />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />

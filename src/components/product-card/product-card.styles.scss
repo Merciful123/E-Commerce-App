@@ -16,7 +16,24 @@
         opacity: 0.7;
         position: absolute;
         top: 255px;
-        display: none;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        @media screen and (max-width: 800px) {
+            display: block;
+            opacity: 0.9;
+            min-width: unset;
+            padding: 0 10px;
+            flex-wrap: wrap;
+            flex-grow: 1;
+            &:hover {
+                img {
+                    opacity: unset;
+                }
+                button {
+                    opacity: unset;
+                }
+            }
+        }
     }
     &:hover {
         img {
