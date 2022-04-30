@@ -24,10 +24,10 @@ const Checkout = () => {
           <span>Product</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Discription </span>
+          <span>Name </span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Quantity</span>
+          <span>Number</span>
         </HeaderBlock>
         <HeaderBlock>
           <span>Price</span>

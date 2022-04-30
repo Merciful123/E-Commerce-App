@@ -15,9 +15,16 @@ export const FormContainer = styled.form`
   background-color: papayawhip;
   border: 1px solid black;
   border-radius: 3px;
+  @media screen and (max-width: 800px) {
+    min-width: 300px;
+  }
 `;
 
 export const PaymentButton = styled(Button)`
   margin-left: auto;
   margin-top: 30px;
+  @media screen and (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
