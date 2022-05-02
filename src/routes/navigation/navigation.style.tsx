@@ -47,8 +47,6 @@ export const NavLinks = styled.div`
   @media screen and (max-width: 800px) {
     width: 80%;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     justify-content: flex-end;
   }
 `;
@@ -65,9 +63,7 @@ export const Navlink = styled(Link)`
 
   @media screen and (max-width: 800px) {
     width: 80%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: flex; 
     justify-content: flex-end;
   }
 `;
