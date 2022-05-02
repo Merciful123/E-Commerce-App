@@ -7,6 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./store/store";
 
 import { Elements } from "@stripe/react-stripe-js";
+ 
 
 import "./index.css";
 import App from "./App";
@@ -28,6 +29,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+ 
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

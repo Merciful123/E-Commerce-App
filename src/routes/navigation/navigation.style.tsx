@@ -13,6 +13,8 @@ export const NavigationContainer = styled.div`
     height: 60px;
     padding: 10px;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
   }
 `;
 
@@ -29,6 +31,8 @@ export const LogoContainer = styled(Link)`
   @media screen and (max-width: 800px) {
     width: 50px;
     padding: 0px;
+    display: flex;
+    justify-content: center;
   }
 `;
 
@@ -42,6 +46,10 @@ export const NavLinks = styled.div`
 
   @media screen and (max-width: 800px) {
     width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
   }
 `;
 
@@ -54,6 +62,13 @@ export const Navlink = styled(Link)`
   &:hover {
     background-color: Turquoise;
     box-shadow: 1px 1px 10px yellow;
+
+  @media screen and (max-width: 800px) {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
   }
 `;
 

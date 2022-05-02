@@ -12,11 +12,13 @@ const defaultFormFields = {
   Email: "",
   Password: "",
   ConfirmPassword: "",
+  DeliveryAddress: "",
 };
 
 const SignUpForm = () => {
   const [FormFields, setFormFields] = useState(defaultFormFields);
-  const { DisplayName, Email, Password, ConfirmPassword } = FormFields;
+  const { DisplayName, DeliveryAddress, Email, Password, ConfirmPassword } =
+    FormFields;
   const dispatch = useDispatch();
 
   const resetFormFields = () => {
@@ -59,6 +61,14 @@ const SignUpForm = () => {
           onChange={onHandleChange}
           name="DisplayName"
           value={DisplayName}
+        />
+        <FormInput
+          label="Delivery Address"
+          type="text"
+          required
+          onChange={onHandleChange}
+          name="DeliveryAddress"
+          value={DeliveryAddress}
         />
 
         <FormInput
