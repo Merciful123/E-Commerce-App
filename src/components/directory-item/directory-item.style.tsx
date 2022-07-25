@@ -14,6 +14,7 @@ export const BackgroundImage = styled.div<BackgroundImageProps>`
 
 export const Body = styled.div`
         height: 90px;
+        width:110px;
         padding: 0 10px;
         display: flex;
         flex-direction: column;

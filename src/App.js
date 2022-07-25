@@ -1,6 +1,8 @@
 import { useEffect, lazy, Suspense } from "react";
 
 import { useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import Home from "./routes/home/home.component";
 import { Routes, Route } from "react-router-dom";
@@ -12,9 +14,7 @@ import Spinner from "./components/spinner/spinner.component";
 import { checkUserSession } from "./store/user/user.action";
 import { GlobalStyle } from "./global.style";
 
-
-
-//Below is Codesplitting,lazy and Suspence Optimization:--
+//Below is the Codesplitting,lazy and Suspence Optimization:--
 // Dynamic Import
 
 const Shop = lazy(() => import("./routes/shop/shop.component"));
@@ -36,6 +36,7 @@ const App = () => {
   return (
     <Suspense fallback={<Spinner />}>
       <GlobalStyle />
+      <ToastContainer position="top-right" />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />

@@ -1,4 +1,5 @@
 import { User } from "firebase/auth";
+ 
 import {
   createAction,
   withMatcher,
@@ -40,6 +41,7 @@ export type SignUpSuccess = ActionWithPayload<
     additionalDetails: AdditionalInformation;
   }
 >;
+ 
 
 export type SignUpFailed = ActionWithPayload<
   USER_ACTION_TYPES.SIGN_UP_FAILED,

@@ -5,6 +5,7 @@ import {
 } from "../../utils/reducer/reducer.utils";
 import { CART_ACTION_TYPES, CartItem } from "./cart.types";
 import { CategoryItem } from "../categories/category.type";
+import { toast } from "react-toastify";
 
 const addCartItem = (
   cartItems: CartItem[],
@@ -19,13 +20,16 @@ const addCartItem = (
   // if found increment quantity
 
   if (existingCartItem) {
-    return cartItems.map((cartItem) =>
-      cartItem.id === productToAdd.id
-        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : cartItem
+    return cartItems.map(
+      (cartItem) =>
+        cartItem.id === productToAdd.id
+          ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          : cartItem,
+      toast.success("Added to cart successfully")
     );
   }
   // returning new array with modified cartItems/ new cart items
+  toast.success("Added to cart successfully");
   return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
 
@@ -41,14 +45,19 @@ const removeCartItem = (
   // check if quantity is eqaul to 1,  remove that item from the cart
 
   if (existingCartItem && existingCartItem.quantity === 1) {
-    return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
+    return cartItems.filter(
+      (cartItem) => cartItem.id !== cartItemToRemove.id,
+      toast.info("Removed from cart successfully")
+    );
   }
 
   //  return back cart items with matching cart item with reduced quantity
-  return cartItems.map((cartItem) =>
-    cartItem.id === cartItemToRemove.id
-      ? { ...cartItem, quantity: cartItem.quantity - 1 }
-      : cartItem
+  return cartItems.map(
+    (cartItem) =>
+      cartItem.id === cartItemToRemove.id
+        ? { ...cartItem, quantity: cartItem.quantity - 1 }
+        : cartItem,
+    toast.info("Removed from cart successfully")
   );
 };
 
@@ -69,6 +78,8 @@ const clearCartItem = (
   cartItemToClear: CartItem
 ): CartItem[] =>
   cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
+  
+
 
 export type SetCartIsOpen = ActionWithPayload<
   CART_ACTION_TYPES.SET_IS_CART_OPEN,
