@@ -1,4 +1,5 @@
 import { AnyAction } from "redux";
+import { toast } from "react-toastify";
 
 import {
   signInSuccess,
@@ -27,6 +28,7 @@ export const userReducer = (
   action = {} as AnyAction
 ) => {
   if (signInSuccess.match(action)) {
+    toast.success("Signed in successfully");
     return {
       ...state,
       currentUser: action.payload,
@@ -34,6 +36,7 @@ export const userReducer = (
   }
 
   if (signOutSuccess.match(action)) {
+    toast.info("Signed out successfully");
     return {
       ...state,
       currentUser: null,
@@ -45,6 +48,7 @@ export const userReducer = (
     signInFailed.match(action) ||
     signUpFailed.match(action)
   ) {
+    toast.info("Failed, try again.");
     return {
       ...state,
       error: action.payload,
