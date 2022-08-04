@@ -36,7 +36,7 @@ const App = () => {
   return (
     <Suspense fallback={<Spinner />}>
       <GlobalStyle />
-      <ToastContainer position="top-right" />
+      <ToastContainer position="top-right" autoClose="500" />
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
