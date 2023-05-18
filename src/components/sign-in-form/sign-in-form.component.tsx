@@ -47,7 +47,7 @@ const SignInForm = () => {
   return (
     <SignInContainer>
       <h2>Already have an acoount.</h2>
-      <span>Sign In With Email or Google Account</span>
+      {/* <span>Sign In With Email or Google Account</span> */}
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Email"
